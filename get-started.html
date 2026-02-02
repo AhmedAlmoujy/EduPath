@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | EduPath</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .enroll-section { padding: 8rem 0; background: #f8f9fa; min-height: 80vh; display: flex; align-items: center; }
+        .enroll-card { max-width: 600px; margin: 0 auto; background: var(--white); padding: 4rem; border-radius: 30px; box-shadow: var(--shadow); }
+        .enroll-form { display: grid; gap: 1.5rem; margin-top: 2rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .form-group label { font-weight: 600; color: var(--prussian-blue); }
+        .form-group input, .form-group select { padding: 1rem; border: 1px solid #ddd; border-radius: 10px; font-family: inherit; transition: var(--transition); }
+        .form-group input:focus { border-color: var(--tangerine); outline: none; box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1); }
+        .submit-btn { padding: 1.2rem; background: var(--prussian-blue); color: var(--white); border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: var(--transition); }
+        .submit-btn:hover { background: var(--tangerine); transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Edu<span>Path</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="get-started.html" class="btn-nav active">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="enroll-section">
+            <div class="container">
+                <div class="enroll-card">
+                    <div class="text-center">
+                        <h2>Start Your <span>Journey</span></h2>
+                        <p>Fill out the form below to begin your path in technology.</p>
+                    </div>
+                    <form class="enroll-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="path">Preferred Initial Path</label>
+                            <select id="path">
+                                <option value="undecided">Not Sure Yet (Start with Basics)</option>
+                                <option value="ai">AI Engineering</option>
+                                <option value="cyber">Cybersecurity</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn" onclick="event.preventDefault(); alert('Enrollment received! We will contact you soon.');">Claim Your Spot</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 EduPath Educational Vision. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

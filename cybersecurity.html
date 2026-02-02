@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Path | EduPath</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .detail-hero { padding: 6rem 0; background: #001f3f; color: var(--white); text-align: center; }
+        .detail-hero h1 { color: var(--white); font-size: 3.5rem; }
+        .curriculum-section { padding: 6rem 0; }
+        .syllabus-item { border-bottom: 1px solid #eee; padding: 1.5rem 0; cursor: pointer; transition: var(--transition); }
+        .syllabus-item:hover { padding-left: 1rem; color: var(--tangerine); }
+        .syllabus-header { display: flex; justify-content: space-between; align-items: center; }
+        .syllabus-content { display: none; padding: 1rem 0; color: var(--text-muted); }
+        .active .syllabus-content { display: block; }
+        .career-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .career-card { padding: 2rem; background: #f8f9fa; border-radius: 15px; text-align: center; }
+        .career-card h4 { color: var(--prussian-blue); margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Edu<span>Path</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="get-started.html" class="btn-nav">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detail-hero">
+            <div class="container hero-grid">
+                <div class="detail-hero-content">
+                    <h1>Cybersecurity</h1>
+                    <p>Mastering the art of digital defense and proactive threat hunting.</p>
+                </div>
+                <div class="hero-image-wrap">
+                    <img src="images/cybersecurity.png" alt="Cybersecurity" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <section class="curriculum-section container">
+            <h2>The Curriculum</h2>
+            <p class="subtitle">Secure the infrastructure of tomorrow, built on a foundation of CS logic.</p>
+            
+            <div class="syllabus">
+                <div class="syllabus-item active">
+                    <div class="syllabus-header">
+                        <h3>Module 1: Networking Foundations</h3>
+                        <span>-</span>
+                    </div>
+                    <div class="syllabus-content">
+                        TCP/IP, DNS, routing, switching, and the fundamental architecture of the internet.
+                    </div>
+                </div>
+                <div class="syllabus-item">
+                    <div class="syllabus-header">
+                        <h3>Module 2: Offensive Security (Ethical Hacking)</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="syllabus-content">
+                        Vulnerability assessment, penetration testing techniques, and OWASP Top 10.
+                    </div>
+                </div>
+                <div class="syllabus-item">
+                    <div class="syllabus-header">
+                        <h3>Module 3: Defensive Operations (Blue Teaming)</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="syllabus-content">
+                        SIEM tools, incident response, network monitoring, and forensics.
+                    </div>
+                </div>
+                <div class="syllabus-item">
+                    <div class="syllabus-header">
+                        <h3>Module 4: Security Architecture & Cloud</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="syllabus-content">
+                        Securing cloud environments (AWS/Azure), Zero Trust architecture, and cryptography.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="career-section container text-center" style="padding-bottom: 6rem;">
+            <h2>Career Outcomes</h2>
+            <div class="career-grid">
+                <div class="career-card">
+                    <h4>SOC Analyst</h4>
+                    <p>Monitor and respond to security threats in real-time within a Security Operations Center.</p>
+                </div>
+                <div class="career-card">
+                    <h4>Penetration Tester</h4>
+                    <p>Identify and exploit vulnerabilities to help organizations harden their defenses.</p>
+                </div>
+                <div class="career-card">
+                    <h4>Security Architect</h4>
+                    <p>Design and oversee the security implementation for large-scale enterprise systems.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 EduPath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.syllabus-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const span = item.querySelector('span');
+                span.textContent = item.classList.contains('active') ? '-' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

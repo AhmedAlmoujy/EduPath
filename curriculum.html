@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum | EduPath</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .curriculum-hero { padding: 8rem 0; background: var(--prussian-blue); color: var(--white); text-align: center; }
+        .curriculum-hero h1 { color: var(--white); font-size: 3.5rem; }
+        .roadmap-container { padding: 6rem 0; position: relative; }
+        .roadmap-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: #eee; transform: translateX(-50%); z-index: -1; }
+        .roadmap-stage { margin-bottom: 6rem; position: relative; width: 50%; padding: 2rem; }
+        .roadmap-stage:nth-child(even) { margin-left: auto; text-align: left; }
+        .roadmap-stage:nth-child(odd) { text-align: right; }
+        .stage-box { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow); border: 1px solid #eee; transition: var(--transition); }
+        .stage-box:hover { border-color: var(--tangerine); transform: translateY(-5px); }
+        .stage-dot { width: 24px; height: 24px; background: var(--tangerine); border-radius: 50%; position: absolute; top: 2.5rem; }
+        .roadmap-stage:nth-child(odd) .stage-dot { right: -12px; }
+        .roadmap-stage:nth-child(even) .stage-dot { left: -12px; }
+        .stage-image { width: 100%; height: 200px; margin-bottom: 2rem; border-radius: 12px; overflow: hidden; }
+        .stage-image img { width: 100%; height: 100%; object-fit: cover; }
+        @media (max-width: 768px) {
+            .roadmap-line { left: 20px; }
+            .roadmap-stage { width: 100%; text-align: left !important; padding-left: 50px; }
+            .stage-dot { left: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Edu<span>Path</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="curriculum.html" class="active">Curriculum</a></li>
+                <li><a href="get-started.html" class="btn-nav">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="curriculum-hero">
+            <div class="container">
+                <h1>Our Curriculum</h1>
+                <p>A structured journey from digital native to technology professional.</p>
+            </div>
+        </section>
+
+        <section class="roadmap-container container">
+            <div class="roadmap-line"></div>
+            
+            <div class="roadmap-stage">
+                <div class="stage-dot"></div>
+                <div class="stage-box">
+                    <div class="stage-image">
+                        <img src="images/curriculum_1.png" alt="Stage 1 Foundation">
+                    </div>
+                    <h3>Stage 1: The Foundation</h3>
+                    <p>Core programming logic using Python. Understanding variables, data structures, and algorithmic thinking.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-stage">
+                <div class="stage-dot"></div>
+                <div class="stage-box">
+                    <div class="stage-image">
+                        <img src="images/home_hero.png" alt="Stage 2 Choice">
+                    </div>
+                    <h3>Stage 2: Choice of Path</h3>
+                    <p>Learners evaluate their interests and select between the AI Engineering track or the Cybersecurity track.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-stage">
+                <div class="stage-dot"></div>
+                <div class="stage-box">
+                    <div class="stage-image">
+                        <img src="images/ai_engineering.png" alt="Stage 3 Advanced">
+                    </div>
+                    <h3>Stage 3: Advanced Training</h3>
+                    <p>Intensive specialized modules focusing on neural networks (AI) or offensive/defensive operations (Security).</p>
+                </div>
+            </div>
+
+            <div class="roadmap-stage">
+                <div class="stage-dot"></div>
+                <div class="stage-box">
+                    <div class="stage-image">
+                        <img src="images/features.png" alt="Stage 4 Portfolio">
+                    </div>
+                    <h3>Stage 4: Project & Portfolio</h3>
+                    <p>Build real-world applications or security audits to demonstrate mastery and prepare for the industry.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 EduPath Educational Vision. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
