@@ -1,141 +1,115 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Our Vision | Educational Platform</title>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | EduPath</title>
     <meta
       name="description"
-      content="Learn the fundamentals of programming and choose your advanced path in AI Engineering or Cybersecurity."
+      content="تعلم أساسيات البرمجة واختر مسارك المتقدم في هندسة الذكاء الاصطناعي أو الأمن السيبراني."
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optimized font loading with display=swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.cdnfonts.com/css/dg-heaven" rel="stylesheet">
+    <script src="js/theme-switch.js"></script>
+</head>
+<body class="lang-ar">
     <header>
-      <nav class="container">
-        <div class="logo">Edu<span>Path</span></div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="curriculum.html">Curriculum</a></li>
-          <li><a href="get-started.html" class="btn-nav">Get Started</a></li>
-        </ul>
-      </nav>
+        <nav class="container">
+            <div class="logo">Edu<span>Path</span></div>
+            <ul>
+                <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                <li><a href="about.html" class="active" data-en="About" data-ar="من نحن">من نحن</a></li>
+                <li><a href="curriculum.html" data-en="Curriculum" data-ar="المنهج">المنهج</a></li>
+                <li class="nav-controls">
+                    <button id="theme-switch" class="theme-switch-btn" title="Toggle Theme"></button>
+                    <button id="lang-switch" class="lang-switch-btn">English</button>
+                    <a href="get-started.html" class="btn-nav" data-en="Get Started" data-ar="ابدأ الآن">ابدأ الآن</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-content">
-            <h1>Building Your Future in <span>Modern Tech</span></h1>
-            <p>
-              We believe that mastery starts with a solid foundation. Our
-              educational vision is simple: empower beginners with the core
-              logic of computer science, then guide them towards specialized,
-              high-impact careers.
-            </p>
-            <div class="hero-actions">
-              <a href="#vision" class="btn-primary">Our Vision</a>
-              <a href="#paths" class="btn-secondary">Explore Paths</a>
+        <section class="detail-hero">
+            <div class="container hero-grid">
+                <div class="detail-hero-content">
+                    <h1 data-en="Our Vision" data-ar="رؤيتنا">رؤيتنا</h1>
+                    <p data-en="Beyond just code—we build the bridge from curiosity to professional expertise." data-ar="ما وراء مجرد البرمجة—نحن نبني الجسر من الفضول إلى الخبرة المهنية.">ما وراء مجرد البرمجة—نحن نبني الجسر من الفضول إلى الخبرة المهنية.</p>
+                </div>
+                <div class="hero-image-wrap">
+                    <img src="images/features.png" alt="EduPath Vision" class="hero-img" fetchpriority="high">
+                </div>
             </div>
-          </div>
-          <div class="hero-image-wrap">
-            <img
-              src="images/cs_foundation.png"
-              alt="Programming Foundation"
-              class="hero-img"
-            />
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="mission-statement">
-        <div class="container narrow">
-          <div class="human-touch">
-            <span class="badge">Our Philosophy</span>
-            <h2>More than just code. We're building <span>thinkers</span>.</h2>
-            <p>
-              Technological trends come and go, but the logic of computer science
-              is eternal. We started this platform because we saw too many
-              beginners getting lost in the "how" without understanding the
-              "why."
-            </p>
-            <p>
-              Our goal isn't just to teach you a language; it's to teach you how
-              to analyze problems like an engineer and protect systems like a
-              strategist. Whether you choose AI or Cybersecurity, you'll start
-              with the same unbreakable foundation.
-            </p>
-          </div>
-        </div>
-      </section>
+        <section class="mission-statement">
+            <div class="container narrow">
+                <div class="human-touch">
+                    <span class="badge" data-en="Our Mission" data-ar="مهمتنا">مهمتنا</span>
+                    <h2 data-en="Education with a Human Touch" data-ar="تعليم بلمسة إنسانية">تعليم بلمسة إنسانية</h2>
+                    <p data-en="We believe technology education should be accessible and structured. Our mission is to provide a clear path for beginners to become elite specialists in AI and Cybersecurity, without losing the practical, real-world application." data-ar="نحن نؤمن بأن تعليم التكنولوجيا يجب أن يكون متاحاً ومنظماً. مهمتنا هي توفير مسار واضح للمبتدئين ليصبحوا متخصصين بارزين في الذكاء الاصطناعي والأمن السيبراني، دون فقدان التطبيق العملي والواقعي.">نحن نؤمن بأن تعليم التكنولوجيا يجب أن يكون متاحاً ومنظماً. مهمتنا هي توفير مسار واضح للمبتدئين ليصبحوا متخصصين بارزين في الذكاء الاصطناعي والأمن السيبراني، دون فقدان التطبيق العملي والواقعي.</p>
+                </div>
+            </div>
+        </section>
 
-      <section id="vision" class="vision-section">
-        <div class="container text-center">
-          <h2>The Educational Journey</h2>
-          <p class="subtitle">
-            A clear, human-centered roadmap from zero to expert.
-          </p>
-          <div class="journey-flow">
-            <div class="journey-step">
-              <div class="step-icon">1</div>
-              <h3>CS Basics</h3>
-              <p>
-                Learn variables, loops, and logic—the DNA of every digital
-                product.
-              </p>
+        <section class="vision-section container">
+            <div class="text-center">
+                <h2 data-en="The Journey" data-ar="الرحلة">الرحلة</h2>
+                <p class="subtitle" data-en="How we take you from basics to brilliance." data-ar="كيف نأخذك من الأساسيات إلى التألق.">كيف نأخذك من الأساسيات إلى التألق.</p>
             </div>
-            <div class="journey-arrow">→</div>
-            <div class="journey-step highlight">
-              <div class="step-icon">2</div>
-              <h3>Choose Your Path</h3>
-              <p>
-                Specialization in AI Engineering or Cybersecurity based on your
-                interest.
-              </p>
+            
+            <div class="journey-flow">
+                <div class="journey-step">
+                    <div class="step-icon">1</div>
+                    <h3 data-en="Fundamentals" data-ar="الأساسيات">الأساسيات</h3>
+                    <p data-en="Master logic and Python basics." data-ar="إتقان المنطق وأساسيات بايثون.">إتقان المنطق وأساسيات بايثون.</p>
+                </div>
+                
+                <div class="journey-arrow">→</div>
+                
+                <div class="journey-step highlight">
+                    <div class="step-icon">2</div>
+                    <h3 data-en="Core Specialization" data-ar="التخصص الجوهري">التخصص الجوهري</h3>
+                    <p data-en="Choose your path: AI or Cyber." data-ar="اختر مسارك: الذكاء الاصطناعي أو الأمن السيبراني.">اختر مسارك: الذكاء الاصطناعي أو الأمن السيبراني.</p>
+                </div>
+                
+                <div class="journey-arrow">→</div>
+                
+                <div class="journey-step">
+                    <div class="step-icon">3</div>
+                    <h3 data-en="Professional Mastery" data-ar="الإتقان المهني">الإتقان المهني</h3>
+                    <p data-en="Real-world projects & certification." data-ar="مشاريع واقعية وشهادات معتمدة.">مشاريع واقعية وشهادات معتمدة.</p>
+                </div>
             </div>
-            <div class="journey-arrow">→</div>
-            <div class="journey-step">
-              <div class="step-icon">3</div>
-              <h3>Industry Readiness</h3>
-              <p>Master real-world tools and projects to launch your career.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
       <section id="paths" class="paths-section container">
         <div class="text-center">
-          <h2>Advanced Specializations</h2>
-          <p class="subtitle">
-            Deep dive into the technologies shaping tomorrow.
-          </p>
+          <h2 data-en="Advanced Tracks" data-ar="تخصصات متقدمة">تخصصات متقدمة</h2>
+          <p class="subtitle" data-en="Deep dive into the tech that shapes the future." data-ar="تعمق في التقنيات التي تشكل المستقبل.">تعمق في التقنيات التي تشكل المستقبل.</p>
         </div>
         <div class="path-grid">
                 <div class="path-card">
                     <div class="card-image">
-                        <img src="images/ai_engineering.png" alt="AI Engineering">
+                        <img src="images/ai_engineering.png" alt="AI Engineering" loading="lazy" decoding="async">
                     </div>
                     <div class="card-body">
-                        <h3>AI Engineering</h3>
-                        <p>Go beyond prompts. Learn to build, fine-tune, and deploy large language models and intelligent systems.</p>
-                        <a href="ai-engineering.html" class="btn-text">Learn More →</a>
+                        <h3 data-en="AI Engineering" data-ar="هندسة الذكاء الاصطناعي">هندسة الذكاء الاصطناعي</h3>
+                        <p data-en="Go beyond writing commands. Learn to build and deploy intelligent systems." data-ar="تجاوز مجرد كتابة الأوامر. تعلم بناء وصقل ونشر النماذج اللغوية الكبيرة والأنظمة الذكية.">تجاوز مجرد كتابة الأوامر. تعلم بناء وصقل ونشر النماذج اللغوية الكبيرة والأنظمة الذكية.</p>
+                        <a href="ai-engineering.html" class="btn-text" data-en="Learn More" data-ar="لمعرفة المزيد">لمعرفة المزيد</a>
                     </div>
                 </div>
                 <div class="path-card">
                     <div class="card-image">
-                        <img src="images/cybersecurity.png" alt="Cybersecurity">
+                        <img src="images/cybersecurity.png" alt="Cybersecurity" loading="lazy" decoding="async">
                     </div>
                     <div class="card-body">
-                        <h3>Cybersecurity</h3>
-                        <p>Protect the digital frontier. Master ethical hacking, threat intelligence, and network defense.</p>
-                        <a href="cybersecurity.html" class="btn-text">Learn More →</a>
+                        <h3 data-en="Cybersecurity" data-ar="الأمن السيبراني">الأمن السيبراني</h3>
+                        <p data-en="Protect the digital borders. Master ethical hacking and defense." data-ar="احمِ الحدود الرقمية. أتقن الهكر الأخلاقي، واستخبارات التهديدات، والدفاع عن الشبكات.">احمِ الحدود الرقمية. أتقن الهكر الأخلاقي، واستخبارات التهديدات، والدفاع عن الشبكات.</p>
+                        <a href="cybersecurity.html" class="btn-text" data-en="Learn More" data-ar="لمعرفة المزيد">لمعرفة المزيد</a>
                     </div>
                 </div>
         </div>
@@ -143,23 +117,27 @@
     </main>
 
     <footer>
-      <div class="container footer-content">
-        <div class="footer-brand">
-          <div class="logo">Edu<span>Path</span></div>
-          <p>Empowering the next generation of technologists.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">Edu<span>Path</span></div>
+                    <p data-en="Empowering the next generation of technology leaders." data-ar="تمكين الجيل القادم من قادة التكنولوجيا.">تمكين الجيل القادم من قادة التكنولوجيا.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html" data-en="Our Story" data-ar="قصتنا">قصتنا</a></li>
+                        <li><a href="curriculum.html" data-en="Curriculum" data-ar="المنهج">المنهج</a></li>
+                        <li><a href="get-started.html" data-en="Enroll" data-ar="سجل الآن">سجل الآن</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EduPath. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">جميع الحقوق محفوظة.</span></p>
+            </div>
         </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 EduPath Educational Vision. All rights reserved.</p>
-      </div>
     </footer>
-  </body>
+
+    <script src="js/lang-switch.js"></script>
+</body>
 </html>

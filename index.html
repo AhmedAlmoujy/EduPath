@@ -1,100 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduPath | Master Programming, AI & Cybersecurity</title>
+    <title>EduPath | Empowering Your Educational Journey</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Optimized font loading with display=swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet"></noscript>
+    <script src="js/theme-switch.js"></script>
 </head>
-<body>
+<body class="lang-ar">
     <header>
         <nav class="container">
             <div class="logo">Edu<span>Path</span></div>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="curriculum.html">Curriculum</a></li>
-                <li><a href="get-started.html" class="btn-nav">Get Started</a></li>
+                <li><a href="index.html" class="active" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                <li><a href="about.html" data-en="About" data-ar="من نحن">من نحن</a></li>
+                <li><a href="curriculum.html" data-en="Curriculum" data-ar="المنهج">المنهج</a></li>
+                <li class="nav-controls">
+                    <button id="theme-switch" class="theme-switch-btn" title="Toggle Theme"></button>
+                    <button id="lang-switch" class="lang-switch-btn">English</button>
+                    <a href="get-started.html" class="btn-nav" data-en="Get Started" data-ar="ابدأ الآن">ابدأ الآن</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero home-hero">
+        <section class="hero">
             <div class="container hero-grid">
                 <div class="hero-content">
-                    <span class="badge">The Future of Education</span>
-                    <h1>Unlock Your Potential in <span>Modern Technology</span></h1>
-                    <p>From core fundamentals to advanced paths in AI and Cybersecurity. We provide the roadmap to your future career.</p>
+                    <h1 data-en="Master Your Path in Technology" data-ar="أتقن مسارك في عالم التكنولوجيا">أتقن مسارك في عالم التكنولوجيا</h1>
+                    <p data-en="A journey starting with fundamentals and leading to elite specializations in AI and Cybersecurity." data-ar="رحلة تبدأ من الأساسيات وتصل بك إلى تخصصات النخبة في الذكاء الاصطناعي والأمن السيبراني.">رحلة تبدأ من الأساسيات وتصل بك إلى تخصصات النخبة في الذكاء الاصطناعي والأمن السيبراني.</p>
                     <div class="hero-actions">
-                        <a href="get-started.html" class="btn-primary">Start Your Journey</a>
-                        <a href="curriculum.html" class="btn-secondary">View Curriculum</a>
+                        <a href="get-started.html" class="btn-primary" data-en="Enroll Now" data-ar="سجل الآن">سجل الآن</a>
+                        <a href="about.html" class="btn-secondary" data-en="Learn More" data-ar="اكتشف المزيد">اكتشف المزيد</a>
                     </div>
                 </div>
                 <div class="hero-image-wrap">
-                    <img src="images/home_hero.png" alt="Educational Portal" class="hero-img">
+                    <img src="images/home_hero.png" alt="EduPath Learning" class="hero-img" fetchpriority="high">
                 </div>
             </div>
         </section>
 
-        <section class="features container">
-            <div class="text-center">
-                <h2>Why Choose <span>EduPath</span>?</h2>
-                <p class="subtitle">A holistic approach to learning the most in-demand skills.</p>
-            </div>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon-wrap">
-                        <img src="images/features.png" alt="Features Visual" class="feature-preview-img">
-                    </div>
-                    <h3>Curated Foundation</h3>
-                    <p>We don't just teach code; we teach the logic that powers the digital world.</p>
+        <section class="features">
+            <div class="container">
+                <div class="text-center">
+                    <h2 data-en="Why Choose Edu<span>Path</span>?" data-ar="لماذا تختار إيدو<span>باث</span>؟">لماذا تختار إيدو<span>باث</span>؟</h2>
+                    <p class="subtitle" data-en="Built for beginners, designed for professionals." data-ar="صُممت للمبتدئين، ونُفذت للمحترفين.">صُممت للمبتدئين، ونُفذت للمحترفين.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>Specialized Paths</h3>
-                    <p>Transition seamlessly into high-impact fields like AI Engineering and Cyber Defense.</p>
-                    <div class="card-links">
-                        <a href="ai-engineering.html" class="btn-text">AI Engineering →</a>
-                        <a href="cybersecurity.html" class="btn-text">Cybersecurity →</a>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap">
+                            <img src="images/cs_foundation.png" alt="Fundamentals" class="feature-preview-img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 data-en="Programming Foundations" data-ar="أساسيات البرمجة">أساسيات البرمجة</h3>
+                        <p data-en="Master the universal logic of coding before choosing your path." data-ar="أتقن المنطق الشامل للبرمجة قبل اختيار تخصصك.">أتقن المنطق الشامل للبرمجة قبل اختيار تخصصك.</p>
                     </div>
-                </div>
-                <div class="feature-card">
-                    <h3>Industry Ready</h3>
-                    <p>Our curriculum is designed with career outcomes in mind, focusing on real-world tools.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap">
+                            <img src="images/curriculum_1.png" alt="Specialization" class="feature-preview-img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 data-en="Elite Specializations" data-ar="تخصصات النخبة">تخصصات النخبة</h3>
+                        <p data-en="Deep dive into AI Engineering or Cybersecurity with veteran guidance." data-ar="تعمق في هندسة الذكاء الاصطناعي أو الأمن السيبراني بإشراف الخبراء.">تعمق في هندسة الذكاء الاصطناعي أو الأمن السيبراني بإشراف الخبراء.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap">
+                            <img src="images/features.png" alt="Vision" class="feature-preview-img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 data-en="Clear Vision" data-ar="رؤية واضحة">رؤية واضحة</h3>
+                        <p data-en="Know exactly where your journey leads with our transparent roadmap." data-ar="اعرف تماماً إلى أين تقودك رحلتك من خلال خارطة الطريق الشفافة لدينا.">اعرف تماماً إلى أين تقودك رحلتك من خلال خارطة الطريق الشفافة لدينا.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="cta-banner">
             <div class="container text-center">
-                <h2>Ready to redefine your <span>career</span>?</h2>
-                <p>Join thousands of learners building the future of technology today.</p>
-                <a href="get-started.html" class="btn-primary">Get Started Now</a>
+                <h2 data-en="Ready to Start?" data-ar="هل أنت مستعد للبدء؟">هل أنت مستعد للبدء؟</h2>
+                <p data-en="Join thousands of students on the most structural educational path." data-ar="انضم إلى آلاف الطلاب في المسار التعليمي الأكثر تنظيماً.">انضم إلى آلاف الطلاب في المسار التعليمي الأكثر تنظيماً.</p>
+                <a href="get-started.html" class="btn-primary" data-en="Get Started for Free" data-ar="ابدأ مجاناً">ابدأ مجاناً</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <div class="logo">Edu<span>Path</span></div>
-                <p>Empowering the next generation of technologists.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">Edu<span>Path</span></div>
+                    <p data-en="Empowering the next generation of technology leaders." data-ar="تمكين الجيل القادم من قادة التكنولوجيا.">تمكين الجيل القادم من قادة التكنولوجيا.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html" data-en="Our Story" data-ar="قصتنا">قصتنا</a></li>
+                        <li><a href="curriculum.html" data-en="Curriculum" data-ar="المنهج">المنهج</a></li>
+                        <li><a href="get-started.html" data-en="Enroll" data-ar="سجل الآن">سجل الآن</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="curriculum.html">Full Curriculum</a></li>
-                    <li><a href="get-started.html">Enroll Now</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EduPath. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">جميع الحقوق محفوظة.</span></p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 EduPath Educational Vision. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="js/lang-switch.js"></script>
 </body>
 </html>

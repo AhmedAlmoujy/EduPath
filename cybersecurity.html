@@ -1,36 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybersecurity Path | EduPath</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Optimized font loading with display=swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet"></noscript>
     <style>
-        .detail-hero { padding: 6rem 0; background: #001f3f; color: var(--white); text-align: center; }
+        .detail-hero { padding: 12rem 0; background: #001f3f; color: var(--white); text-align: center; }
         .detail-hero h1 { color: var(--white); font-size: 3.5rem; }
-        .curriculum-section { padding: 6rem 0; }
-        .syllabus-item { border-bottom: 1px solid #eee; padding: 1.5rem 0; cursor: pointer; transition: var(--transition); }
-        .syllabus-item:hover { padding-left: 1rem; color: var(--tangerine); }
+        .curriculum-section { padding: 12rem 0; background: var(--bg-dark); }
+        .syllabus-item { border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 1.5rem 0; cursor: pointer; transition: var(--transition); }
+        .syllabus-item:hover { padding-inline-start: 1rem; color: var(--tangerine); }
         .syllabus-header { display: flex; justify-content: space-between; align-items: center; }
-        .syllabus-content { display: none; padding: 1rem 0; color: var(--text-muted); }
+        .syllabus-content { display: none; padding: 1rem 0; color: var(--text-muted); line-height: 1.8; }
         .active .syllabus-content { display: block; }
         .career-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        .career-card { padding: 2rem; background: #f8f9fa; border-radius: 15px; text-align: center; }
-        .career-card h4 { color: var(--prussian-blue); margin-bottom: 1rem; }
+        .career-card { padding: 4rem; background: var(--bg-card); border-radius: 15px; text-align: center; border: 1px solid var(--border); }
+        .career-card h4 { color: var(--white); margin-bottom: 1rem; }
+        .career-card p { color: var(--text-muted); }
     </style>
+    <script src="js/theme-switch.js"></script>
 </head>
-<body>
+<body class="lang-ar">
     <header>
         <nav class="container">
             <div class="logo">Edu<span>Path</span></div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="curriculum.html">Curriculum</a></li>
-                <li><a href="get-started.html" class="btn-nav">Get Started</a></li>
+                <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                <li><a href="about.html" data-en="About" data-ar="من نحن">من نحن</a></li>
+                <li><a href="curriculum.html" data-en="Curriculum" data-ar="المنهج">المنهج</a></li>
+                <li class="nav-controls">
+                    <button id="theme-switch" class="theme-switch-btn" title="Toggle Theme"></button>
+                    <button id="lang-switch" class="lang-switch-btn">English</button>
+                    <a href="get-started.html" class="btn-nav" data-en="Get Started" data-ar="ابدأ الآن">ابدأ الآن</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -39,84 +45,101 @@
         <section class="detail-hero">
             <div class="container hero-grid">
                 <div class="detail-hero-content">
-                    <h1>Cybersecurity</h1>
-                    <p>Mastering the art of digital defense and proactive threat hunting.</p>
+                    <h1 data-en="Cybersecurity" data-ar="الأمن السيبراني">الأمن السيبراني</h1>
+                    <p data-en="Mastering the art of digital defense and proactive threat hunting." data-ar="إتقان فن الدفاع الرقمي والبحث الاستباقي عن التهديدات.">إتقان فن الدفاع الرقمي والبحث الاستباقي عن التهديدات.</p>
                 </div>
                 <div class="hero-image-wrap">
-                    <img src="images/cybersecurity.png" alt="Cybersecurity" class="hero-img">
+                    <img src="images/cybersecurity.png" alt="Cybersecurity" class="hero-img" fetchpriority="high">
                 </div>
             </div>
         </section>
 
         <section class="curriculum-section container">
-            <h2>The Curriculum</h2>
-            <p class="subtitle">Secure the infrastructure of tomorrow, built on a foundation of CS logic.</p>
+            <h2 data-en="The Curriculum" data-ar="المنهج الدراسي">المنهج الدراسي</h2>
+            <p class="subtitle" data-en="Secure the infrastructure of tomorrow, built on a foundation of CS logic." data-ar="تأمين بنية الغد التحتية، المبنية على أساس منطق علوم الحاسوب.">تأمين بنية الغد التحتية، المبنية على أساس منطق علوم الحاسوب.</p>
             
             <div class="syllabus">
                 <div class="syllabus-item active">
                     <div class="syllabus-header">
-                        <h3>Module 1: Networking Foundations</h3>
+                        <h3 data-en="Module 1: Networking Foundations" data-ar="الوحدة الأولى: أساسيات الشبكات">الوحدة الأولى: أساسيات الشبكات</h3>
                         <span>-</span>
                     </div>
-                    <div class="syllabus-content">
-                        TCP/IP, DNS, routing, switching, and the fundamental architecture of the internet.
+                    <div class="syllabus-content" data-en="TCP/IP, DNS, routing, switching, and the fundamental architecture of the internet." data-ar="TCP/IP، وDNS، والتوجيه (routing)، والتبديل (switching)، والهندسة الأساسية للإنترنت.">
+                        TCP/IP، وDNS، والتوجيه (routing)، والتبديل (switching)، والهندسة الأساسية للإنترنت.
                     </div>
                 </div>
                 <div class="syllabus-item">
                     <div class="syllabus-header">
-                        <h3>Module 2: Offensive Security (Ethical Hacking)</h3>
+                        <h3 data-en="Module 2: Offensive Security" data-ar="الوحدة الثانية: الأمن الهجومي">الوحدة الثانية: الأمن الهجومي</h3>
                         <span>+</span>
                     </div>
-                    <div class="syllabus-content">
-                        Vulnerability assessment, penetration testing techniques, and OWASP Top 10.
+                    <div class="syllabus-content" data-en="Vulnerability assessment, penetration testing techniques, and OWASP Top 10." data-ar="تقييم الضعف، وتقنيات اختبار الاختراق، وأهم 10 مخاطر حسب OWASP.">
+                        تقييم الضعف، وتقنيات اختبار الاختراق، وأهم 10 مخاطر حسب OWASP.
                     </div>
                 </div>
                 <div class="syllabus-item">
                     <div class="syllabus-header">
-                        <h3>Module 3: Defensive Operations (Blue Teaming)</h3>
+                        <h3 data-en="Module 3: Defensive Operations" data-ar="الوحدة الثالثة: العمليات الدفاعية">الوحدة الثالثة: العمليات الدفاعية</h3>
                         <span>+</span>
                     </div>
-                    <div class="syllabus-content">
-                        SIEM tools, incident response, network monitoring, and forensics.
+                    <div class="syllabus-content" data-en="SIEM tools, incident response, network monitoring, and forensics." data-ar="أدوات SIEM، والاستجابة للحوادث، ومراقبة الشبكات، والتحقيق الجنائي الرقمي.">
+                        أدوات SIEM، والاستجابة للحوادث، ومراقبة الشبكات، والتحقيق الجنائي الرقمي.
                     </div>
                 </div>
                 <div class="syllabus-item">
                     <div class="syllabus-header">
-                        <h3>Module 4: Security Architecture & Cloud</h3>
+                        <h3 data-en="Module 4: Cloud Security" data-ar="الوحدة الرابعة: أمن السحابة">الوحدة الرابعة: أمن السحابة</h3>
                         <span>+</span>
                     </div>
-                    <div class="syllabus-content">
-                        Securing cloud environments (AWS/Azure), Zero Trust architecture, and cryptography.
+                    <div class="syllabus-content" data-en="Securing cloud environments (AWS/Azure), Zero Trust architecture, and cryptography." data-ar="تأمين بيئات السحابة (AWS/Azure)، وهندسة الثقة الصفرية (Zero Trust)، والتشفير.">
+                        تأمين بيئات السحابة (AWS/Azure)، وهندسة الثقة الصفرية (Zero Trust)، والتشفير.
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="career-section container text-center" style="padding-bottom: 6rem;">
-            <h2>Career Outcomes</h2>
+            <h2 data-en="Career Outcomes" data-ar="النتائج المهنية">النتائج المهنية</h2>
             <div class="career-grid">
                 <div class="career-card">
-                    <h4>SOC Analyst</h4>
-                    <p>Monitor and respond to security threats in real-time within a Security Operations Center.</p>
+                    <h4 data-en="SOC Analyst" data-ar="محلل SOC">محلل SOC</h4>
+                    <p data-en="Monitor and respond to security threats in real-time." data-ar="مراقبة التهديدات الأمنية والاستجابة لها في الوقت الفعلي.">مراقبة التهديدات الأمنية والاستجابة لها في الوقت الفعلي.</p>
                 </div>
                 <div class="career-card">
-                    <h4>Penetration Tester</h4>
-                    <p>Identify and exploit vulnerabilities to help organizations harden their defenses.</p>
+                    <h4 data-en="Penetration Tester" data-ar="مختبر اختراق">مختبر اختراق</h4>
+                    <p data-en="Identify and exploit vulnerabilities to harden defenses." data-ar="تحديد واستغلال الثغرات لمساعدة المؤسسات على تقوية دفاعاتها.">تحديد واستغلال الثغرات لمساعدة المؤسسات على تقوية دفاعاتها.</p>
                 </div>
                 <div class="career-card">
-                    <h4>Security Architect</h4>
-                    <p>Design and oversee the security implementation for large-scale enterprise systems.</p>
+                    <h4 data-en="Security Architect" data-ar="مهندس أمن">مهندس أمن</h4>
+                    <p data-en="Design and oversee large-scale security systems." data-ar="تصميم والإشراف على تنفيذ الأمن للأنظمة واسعة النطاق.">تصميم والإشراف على تنفيذ الأمن للأنظمة واسعة النطاق.</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container text-center">
-            <p>&copy; 2026 EduPath. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">Edu<span>Path</span></div>
+                    <p data-en="Empowering the next generation of technology leaders." data-ar="تمكين الجيل القادم من قادة التكنولوجيا.">تمكين الجيل القادم من قادة التكنولوجيا.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html" data-en="Our Story" data-ar="قصتنا">قصتنا</a></li>
+                        <li><a href="curriculum.html" data-en="Curriculum" data-ar="المنهج">المنهج</a></li>
+                        <li><a href="get-started.html" data-en="Enroll" data-ar="سجل الآن">سجل الآن</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EduPath. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">جميع الحقوق محفوظة.</span></p>
+            </div>
         </div>
     </footer>
 
+    <script src="js/lang-switch.js"></script>
     <script>
         document.querySelectorAll('.syllabus-item').forEach(item => {
             item.addEventListener('click', () => {
