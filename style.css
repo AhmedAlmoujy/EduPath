@@ -24,7 +24,7 @@
   --border: rgba(255, 255, 255, 0.05);
 }
 
-[data-theme="light"] {
+html[data-theme="light"] {
   --bg-dark: #f8f9fa;
   --bg-card: #ffffff;
   --white: #001f3f;
