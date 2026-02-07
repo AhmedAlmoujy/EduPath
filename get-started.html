@@ -14,7 +14,8 @@
         .enroll-form { display: grid; gap: 1.5rem; margin-top: 2rem; }
         .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
         .form-group label { font-weight: 600; color: var(--white); }
-        .form-group input, .form-group select { padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.02); color: var(--white); border-radius: 10px; font-family: inherit; transition: var(--transition); }
+        .form-group input, .form-group select { padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); background: var(--bg-dark, #0a0f1a); color: var(--white); border-radius: 10px; font-family: inherit; transition: var(--transition); }
+        .form-group select option { background: var(--bg-dark, #0a0f1a); color: var(--white); padding: 0.5rem; }
         .form-group input:focus { border-color: var(--tangerine); outline: none; box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1); }
         .submit-btn { padding: 1.2rem; background: var(--tangerine); color: var(--white); border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: var(--transition); }
         .submit-btn:hover { background: #e67e00; transform: translateY(-2px); }
