@@ -128,7 +128,7 @@ nav a.active {
 .btn-nav {
   padding: 0.7rem 1.5rem;
   background: var(--tangerine);
-  color: var(--white) !important;
+  color: #ffffff !important;
   border-radius: 50px;
 }
 
@@ -139,9 +139,9 @@ nav a.active {
 }
 
 .lang-switch-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--white);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-main);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   cursor: pointer;
@@ -151,7 +151,7 @@ nav a.active {
 }
 
 .lang-switch-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border);
   border-color: var(--tangerine);
 }
 
@@ -217,7 +217,7 @@ nav a.active {
 .btn-primary {
   padding: 1.2rem 2.8rem;
   background: var(--tangerine);
-  color: var(--white);
+  color: #ffffff;
   text-decoration: none;
   border-radius: 12px;
   font-weight: 600;
@@ -228,8 +228,8 @@ nav a.active {
 .btn-secondary {
   padding: 1.2rem 2.8rem;
   background: transparent;
-  color: var(--white);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  border: 2px solid var(--border);
   text-decoration: none;
   border-radius: 12px;
   font-weight: 600;
@@ -243,8 +243,8 @@ nav a.active {
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--white);
+  background: var(--border);
+  border-color: var(--text-main);
 }
 
 .hero-image-wrap {
@@ -378,7 +378,7 @@ h2 {
 
 .journey-step.highlight h3, 
 .journey-step.highlight .step-icon {
-  color: var(--white);
+  color: #ffffff;
   background: rgba(0, 0, 0, 0.2);
 }
 .journey-step.highlight p {
@@ -402,7 +402,7 @@ h2 {
 
 .journey-arrow {
   font-size: 2.5rem;
-  color: rgba(255, 255, 255, 0.1);
+  color: var(--border);
 }
 
 /* --- Paths Section --- */
@@ -494,7 +494,7 @@ h2 {
 
 .feature-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow);
   background: rgba(255, 255, 255, 0.02);
   border-color: var(--tangerine);
 }
@@ -526,8 +526,9 @@ h2 {
 /* --- CTA Banner --- */
 .cta-banner {
   padding: 12rem 0;
-  background: linear-gradient(135deg, var(--bg-card) 0%, #000 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, #161b22 0%, #000 100%);
+  color: #ffffff;
+  --text-muted: #8b949e; /* Force light text for muted elements */
   margin: 8rem 0;
   position: relative;
   overflow: hidden;
@@ -558,7 +559,9 @@ h2 {
 /* --- Footer --- */
 footer {
   background: #000;
-  color: var(--white);
+  color: #ffffff;
+  --text-muted: #8b949e; /* Force light text for muted elements */
+  --tangerine: #ff8c00;
   padding: 8rem 0 4rem;
   border-top: 1px solid var(--border);
 }
