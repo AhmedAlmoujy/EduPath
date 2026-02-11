@@ -6,6 +6,21 @@ window.addEventListener("pageshow", (event) => {
   }
 });
 
+// Global click listener for anchors to ensure storage is updated before navigation
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a");
+  if (link && link.href) {
+      // Check if it is a link we should care about (http/https/file)
+      if (link.protocol === "http:" || link.protocol === "https:" || link.protocol === "file:") {
+         // Save current state explicitly before navigation
+         const currentLang = document.documentElement.getAttribute("lang") || "ar";
+         const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+         localStorage.setItem("site-lang", currentLang);
+         localStorage.setItem("site-theme", currentTheme);
+      }
+  }
+});
+
 function init() {
   const langBtn = document.getElementById("lang-switch");
   const themeBtn = document.getElementById("theme-switch");
@@ -115,17 +130,18 @@ function init() {
     const currentTheme = html.getAttribute("data-theme") || "dark";
 
     document.querySelectorAll("a").forEach(link => {
-      const href = link.getAttribute("href");
-      if (href && (href.endsWith('.html') || href === '#' || (!href.startsWith('http') && !href.startsWith('mailto')))) {
+      // Only modify links that have an href and are not purely anchors or javascript
+      if (link.href && !link.getAttribute("href").startsWith("#") && !link.getAttribute("href").startsWith("javascript:")) {
         try {
-          // Check if it's already a full URL or relative
-          const url = new URL(link.href, window.location.origin);
-          url.searchParams.set("lang", currentLang);
-          url.searchParams.set("theme", currentTheme);
-          link.href = url.toString();
+          const url = new URL(link.href);
+          // Only update internal links (same origin)
+          if (url.origin === window.location.origin || url.protocol === 'file:') {
+             url.searchParams.set("lang", currentLang);
+             url.searchParams.set("theme", currentTheme);
+             link.href = url.toString();
+          }
         } catch (e) {
-          // Fallback
-          console.error("Failed to update link:", href, e);
+          // Fallback or ignore invalid URLs
         }
       }
     });
