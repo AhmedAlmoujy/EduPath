@@ -1,0 +1,32 @@
+{
+    "ai_engineering.png":  {
+                               "width":  1024,
+                               "webp":  "ai_engineering.webp",
+                               "height":  1024
+                           },
+    "cybersecurity.png":  {
+                              "width":  1024,
+                              "webp":  "cybersecurity.webp",
+                              "height":  1024
+                          },
+    "curriculum_1.png":  {
+                             "width":  1024,
+                             "webp":  "curriculum_1.webp",
+                             "height":  1024
+                         },
+    "cs_foundation.png":  {
+                              "width":  1024,
+                              "webp":  "cs_foundation.webp",
+                              "height":  1024
+                          },
+    "features.png":  {
+                         "width":  1024,
+                         "webp":  "features.webp",
+                         "height":  1024
+                     },
+    "home_hero.png":  {
+                          "width":  1024,
+                          "webp":  "home_hero.webp",
+                          "height":  1024
+                      }
+}
