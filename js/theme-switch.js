@@ -18,5 +18,14 @@
       document.body.setAttribute("data-theme", savedTheme);
     });
   }
+  // Handle BFCache (back/forward button) restoration
+  window.addEventListener("pageshow", function(event) {
+    if (event.persisted) {
+      const storedTheme = localStorage.getItem("site-theme") || "dark";
+      html.setAttribute("data-theme", storedTheme);
+      if (document.body) document.body.setAttribute("data-theme", storedTheme);
+    }
+  });
+
 })();
 

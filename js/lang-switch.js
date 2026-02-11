@@ -1,4 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", init);
+window.addEventListener("pageshow", (event) => {
+  // If the page is being restored from the BFCache, we need to re-apply the theme and language.
+  if (event.persisted) {
+    init();
+  }
+});
+
+function init() {
   const langBtn = document.getElementById("lang-switch");
   const themeBtn = document.getElementById("theme-switch");
   const html = document.documentElement;
@@ -10,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Initial State: Check URL params first (fixes file:// protocol issues), then storage
   const urlParams = new URLSearchParams(window.location.search);
   const paramLang = urlParams.get("lang");
-  const paramTheme = urlParams.get("theme"); // Capture theme from URL
-  
+  const paramTheme = urlParams.get("theme");
+
   const savedLang = paramLang || localStorage.getItem("site-lang") || "ar";
   const savedTheme = paramTheme || localStorage.getItem("site-theme") || "dark";
-  
+
   // Persist URL params to storage to sync state
   if (paramLang) localStorage.setItem("site-lang", paramLang);
   if (paramTheme) localStorage.setItem("site-theme", paramTheme);
@@ -25,7 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Handlers ---
 
   if (langBtn) {
-    langBtn.addEventListener("click", () => {
+    // Clone node to remove existing event listeners if init is called multiple times
+    const newLangBtn = langBtn.cloneNode(true);
+    langBtn.parentNode.replaceChild(newLangBtn, langBtn);
+    
+    newLangBtn.addEventListener("click", () => {
       const currentLang = html.getAttribute("lang");
       const newLang = currentLang === "ar" ? "en" : "ar";
       applyLanguage(newLang);
@@ -37,7 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
+    const newThemeBtn = themeBtn.cloneNode(true);
+    themeBtn.parentNode.replaceChild(newThemeBtn, themeBtn);
+
+    newThemeBtn.addEventListener("click", () => {
       const newTheme = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
       applyTheme(newTheme);
       localStorage.setItem("site-theme", newTheme);
@@ -66,18 +81,20 @@ document.addEventListener("DOMContentLoaded", () => {
     html.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
     body.className = `lang-${lang}`;
 
-    if (langBtn) {
-      langBtn.textContent = lang === "ar" ? "English" : "العربية";
+    // Update button text - selecting fresh from DOM in case of replacement
+    const currentLangBtn = document.getElementById("lang-switch");
+    if (currentLangBtn) {
+      currentLangBtn.textContent = lang === "ar" ? "English" : "العربية";
     }
 
-    if (themeBtn) {
-      themeBtn.title = lang === "ar" ? "تبديل المظهر" : "Toggle Theme";
+    const currentThemeBtn = document.getElementById("theme-switch");
+    if (currentThemeBtn) {
+      currentThemeBtn.title = lang === "ar" ? "تبديل المظهر" : "Toggle Theme";
     }
 
-    // Toggle content - use textContent for simple text, innerHTML for HTML content
+    // Toggle content
     document.querySelectorAll("[data-en]").forEach((el) => {
       const content = lang === "en" ? el.getAttribute("data-en") : el.getAttribute("data-ar");
-      // Check if content contains HTML tags
       if (content && (content.includes('<') || el.children.length > 0)) {
         el.innerHTML = content;
       } else if (content) {
@@ -90,32 +107,25 @@ document.addEventListener("DOMContentLoaded", () => {
       el.placeholder = lang === "en" ? el.getAttribute("data-en-placeholder") : el.getAttribute("data-ar-placeholder");
     });
     
-    // Update all navigation links to carry valid state
     updateLinks();
   }
 
   function updateLinks() {
-    // Get current state from DOM to ensure we have latest values
     const currentLang = html.getAttribute("lang") || "ar";
     const currentTheme = html.getAttribute("data-theme") || "dark";
 
     document.querySelectorAll("a").forEach(link => {
       const href = link.getAttribute("href");
-      // Only modify internal .html links or base paths
       if (href && (href.endsWith('.html') || href === '#' || (!href.startsWith('http') && !href.startsWith('mailto')))) {
         try {
-          // Construct new URL with params
-          const url = new URL(link.href); // link.href is absolute
+          // Check if it's already a full URL or relative
+          const url = new URL(link.href, window.location.origin);
           url.searchParams.set("lang", currentLang);
           url.searchParams.set("theme", currentTheme);
           link.href = url.toString();
         } catch (e) {
-          // Fallback relative string manipulation if URL parsing fails
-          if (!href.includes('script:')) {
-             // Remove existing params first to avoid duplicates if called multiple times improperly
-             const base = href.split('?')[0];
-             link.setAttribute('href', `${base}?lang=${currentLang}&theme=${currentTheme}`);
-          }
+          // Fallback
+          console.error("Failed to update link:", href, e);
         }
       }
     });
@@ -124,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function applyTheme(theme) {
     if (!theme) return;
     html.setAttribute("data-theme", theme);
-    // Ensure body also knows about the theme if needed for specific CSS overrides
     body.setAttribute("data-theme", theme);
   }
-});
+}
