@@ -66,7 +66,7 @@
                                 <option value="cyber" data-en="Cybersecurity" data-ar="الأمن السيبراني">الأمن السيبراني</option>
                             </select>
                         </div>
-                        <button type="submit" class="submit-btn" data-en="Claim Your Spot" data-ar="احجز مكانك" onclick="event.preventDefault(); alert(document.documentElement.lang === 'ar' ? 'تم استلام طلب الالتحاق! سنتواصل معك قريبا.' : 'Enrollment received! We will contact you soon.');">احجز مكانك</button>
+                        <button type="submit" class="submit-btn" data-en="Claim Your Spot" data-ar="احجز مكانك">احجز مكانك</button>
                     </form>
                 </div>
             </div>
@@ -95,6 +95,9 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-init.js"></script>
+    <script src="js/enrollment-handler.js"></script>
     <script src="js/lang-switch.js?v=2"></script>
 </body>
 </html>
